@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #1f2a40;
 }
 
 code {
@@ -30,3 +31,10 @@ ul li{
   color: blue;
   border-right: 3px solid blue;
 } */
+/* .pro-sidebar-inner{
+  color: rgba(252, 252, 252, 0.521);
+  background-color: black;
+} */
+.custom-sidebar {
+  background-color: #303a4f !important;
+}

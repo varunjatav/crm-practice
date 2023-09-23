@@ -1,14 +1,14 @@
 import './App.css';
 import Router from './Routes/Router';
 import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
+import Sidebar2 from './components/Sidebar2';
 
 function App() {
   return (
     <div className="app">
       <Navbar/>
-      <div className='flex items-center' >
-      <Sidebar/>
+      <div className='flex items-center text-white' >
+      <Sidebar2/>
       <Router/>
       </div>
       

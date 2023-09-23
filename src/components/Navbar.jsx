@@ -13,9 +13,9 @@ const Navbar = () => {
             />
           </li>
 
-          <li>Trip</li>
+          {/* <li>Trip</li>
           <li>Bookings</li>
-          <li>Accounting</li>
+          <li>Accounting</li> */}
         </ul>
       </div>
 
