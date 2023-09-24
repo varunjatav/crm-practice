@@ -1,89 +1,12 @@
 import { NavLink } from "react-router-dom";
-import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
-import { MdMessage } from "react-icons/md";
-import { BiAnalyse, BiSearch } from "react-icons/bi";
-import { BiCog } from "react-icons/bi";
-import { AiFillHeart, AiTwotoneFileExclamation } from "react-icons/ai";
-import { BsCartCheck } from "react-icons/bs";
+import { FaBars } from "react-icons/fa";
+import { BiSearch } from "react-icons/bi";
+
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-const routes = [
-  {
-    path: "/",
-    name: "Dashboard",
-    icon: <FaHome />,
-  },
-  {
-    path: "/users",
-    name: "Users",
-    icon: <FaUser />,
-  },
-  {
-    path: "/messages",
-    name: "Messages",
-    icon: <MdMessage />,
-  },
-  {
-    path: "/analytics",
-    name: "Analytics",
-    icon: <BiAnalyse />,
-  },
-  {
-    path: "/file-manager",
-    name: "File Manager",
-    icon: <AiTwotoneFileExclamation />,
-    subRoutes: [
-      {
-        path: "/settings/profile",
-        name: "Profile ",
-        icon: <FaUser />,
-      },
-      {
-        path: "/settings/2fa",
-        name: "2FA",
-        icon: <FaLock />,
-      },
-      {
-        path: "/settings/billing",
-        name: "Billing",
-        icon: <FaMoneyBill />,
-      },
-    ],
-  },
-  {
-    path: "/order",
-    name: "Order",
-    icon: <BsCartCheck />,
-  },
-  {
-    path: "/settings",
-    name: "Settings",
-    icon: <BiCog />,
-    exact: true,
-    subRoutes: [
-      {
-        path: "/settings/profile",
-        name: "Profile ",
-        icon: <FaUser />,
-      },
-      {
-        path: "/settings/2fa",
-        name: "2FA",
-        icon: <FaLock />,
-      },
-      {
-        path: "/settings/billing",
-        name: "Billing",
-        icon: <FaMoneyBill />,
-      },
-    ],
-  },
-  {
-    path: "/saved",
-    name: "Saved",
-    icon: <AiFillHeart />,
-  },
-];
+import {routes} from "../Routes/routes";
+
+
 const Sidebar2 = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -165,11 +88,11 @@ const Sidebar2 = () => {
           </AnimatePresence>
         </div>
         <section className="flex flex-col py-4 routes">
-          {routes.map((route) => {
-            return (
+          {routes.map((route) => (
+            <div key={route.name}>
+              {/* Render the main route */}
               <NavLink
                 to={route.path}
-                key={route.name}
                 className="flex text-white items-center gap-4 px-[10px] py-[5px] border-r-transparent hover:border-r-4 hover:border-white hover:transition-transform hover:bg-[#4C5177]"
               >
                 <div className="icon">{route.icon}</div>
@@ -187,8 +110,36 @@ const Sidebar2 = () => {
                   )}
                 </AnimatePresence>
               </NavLink>
-            );
-          })}
+
+              {/* Check if there are subRoutes and render them */}
+              {route.subRoutes && isOpen && (
+                <div className="ml-6">
+                  {route.subRoutes.map((subRoute) => (
+                    <NavLink
+                      key={subRoute.name}
+                      to={subRoute.path}
+                      className="flex text-white items-center gap-4 px-[10px] py-[5px] border-r-transparent hover:border-r-4 hover:border-white hover:transition-transform hover:bg-[#4C5177]"
+                    >
+                      <div className="icon">{subRoute.icon}</div>
+                      <AnimatePresence>
+                        {isOpen && (
+                          <motion.div
+                            variants={showAnimation}
+                            initial="hidden"
+                            animate="show"
+                            exit="hidden"
+                            className="whitespace-nowrap"
+                          >
+                            {subRoute.name}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </NavLink>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </section>
       </motion.div>
       <main></main>
