@@ -22,19 +22,3 @@ ul li{
 .nav_inputside_svg svg{
   cursor: pointer;
 }
-/* #sidebar div{
-  cursor: pointer;
-  padding-right: 10px;
-  
-} */
-/* #sidebar div:hover{
-  color: blue;
-  border-right: 3px solid blue;
-} */
-/* .pro-sidebar-inner{
-  color: rgba(252, 252, 252, 0.521);
-  background-color: black;
-} */
-.custom-sidebar {
-  background-color: #303a4f !important;
-}

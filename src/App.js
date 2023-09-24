@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="app">
       <Navbar/>
-      <div className='flex items-center text-white' >
+      <div className='flex  text-white' >
       <Sidebar2/>
       <Router/>
       </div>

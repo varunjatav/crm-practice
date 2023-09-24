@@ -1,25 +1,27 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from '../pages/Home';
-import Account from '../pages/Account';
+import Saved from '../pages/Saved';
+import Dashboard from '../pages/Dashboard';
 import Calender from '../pages/Calender';
-import Converter from '../pages/Converter';
-import Chart from '../pages/Chart';
-import OnTrip from '../pages/OnTrip';
-import PastTrip from "../pages/PastTrip";
-import Upload from '../pages/Upload';
+import Messages from '../pages/Messages';
+import Users from '../pages/Users';
+import Analytics from '../pages/Analytics';
+import FileManager from "../pages/FileManager";
+import Profile from '../pages/Profile';
 import Balance from '../pages/Balance';
 
 const Router = () => {
   return (
     <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/account' element={<Account />} />
-        <Route path='/chart' element={<Chart />} />
-        <Route path='/converter' element={<Converter />} />
-        <Route path='/ontrip' element={<OnTrip />} />
-        <Route path='/calender' element={<Calender />} />
-        <Route path='/upload' element={<Upload />} />
+        {/* <Route path='/' element={<Home />} /> */}
+        <Route path='/' element={<Dashboard />} />
+        <Route path='/users' element={<Users />} />
+        <Route path='/messages' element={<Messages />} />
+        <Route path='/analytics' element={<Analytics />} />
+        <Route path='/file-manager' element={<FileManager />} >
+          <Route path="/file-manager/settings/profile" element={<Profile/>} />
+        </Route>
+        <Route path='/saved' element={<Saved />} />
         <Route path='/balance' element={<Balance />} />
     </Routes>
   )
