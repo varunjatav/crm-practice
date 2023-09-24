@@ -22,8 +22,8 @@ export const routes = [
       icon: <MdMessage />,
     },
     {
-      path: "/analytics",
-      name: "Analytics",
+      path: "/tasks",
+      name: "Tasks",
       icon: <BiAnalyse />,
     },
     {

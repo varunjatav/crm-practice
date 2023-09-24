@@ -5,7 +5,7 @@ import Dashboard from "../pages/Dashboard";
 import FileManageProfile from "../pages/FileManagerPath/Profile";
 import Messages from "../pages/Messages";
 import Users from "../pages/Users";
-import Analytics from "../pages/Analytics";
+import Tasks from "../pages/Tasks";
 import FileManager from "../pages/FileManager";
 import Billing from "../pages/FileManagerPath/Billing";
 import Balance from "../pages/Balance";
@@ -22,7 +22,7 @@ const Router = () => {
       <Route path="/" element={<Dashboard />} />
       <Route path="/users" element={<Users />} />
       <Route path="/messages" element={<Messages />} />
-      <Route path="/analytics" element={<Analytics />} />
+      <Route path="/tasks" element={<Tasks />} />
       <Route path="/file-manager" element={<FileManager />}>
         <Route path="profile" element={<FileManageProfile />} />
         <Route path="billing" element={<Billing />} />

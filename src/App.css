@@ -4,3 +4,11 @@
   box-sizing: border-box;
 }
 
+.activeBtn{
+  background-color: aliceblue;
+  color: black;
+}
+
+tr:nth-child(even) {
+  background-color: #eff2f5;
+}
